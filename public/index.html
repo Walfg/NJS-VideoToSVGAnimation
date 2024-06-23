@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video to SVG Animation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Convert Video to SVG Animation</h1>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" required>
+    <label for="frameSkip">Frame skip:</label>
+    <select id="frameSkip" name="frameSkip">
+      <option value="1">100% (every frame)</option>
+      <option value="10">10% (every 10th frame)</option>
+      <option value="20">5% (every 20th frame)</option>
+    </select>
+    <button type="submit">Upload and Convert</button>
+  </form>
+  
+  <h1>Or Upload a ZIP of SVGs</h1>
+  <form id="uploadZipForm" enctype="multipart/form-data">
+    <input type="file" name="svgZip" accept=".zip">
+    <button type="submit">Upload ZIP</button>
+  </form>
+  
+  <div>
+    <label>
+      <input type="checkbox" id="unlockFramerate">
+      Unlock FrameRate
+    </label>
+  </div>
+
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+  <div id="animation-container"></div>
+  <button id="pauseButton" style="display: none;">Pause</button>
+  <button id="downloadButton" disabled>Download SVGs</button>
+  <script src="script.js"></script>
+</body>
+</html>
